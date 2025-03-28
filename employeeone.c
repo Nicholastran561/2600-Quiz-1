@@ -21,3 +21,12 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
     return NULL; 
 } 
 
+PtrToEmployee searchEmployeeByPhoneNumber(PtrToConstEmployee ptr, int tableSize, char * targetPhoneNumber){ 
+    const PtrToConstEmployee endPtr = ptr + tableSize; 
+    for(; ptr < endPtr; ptr++) 
+    {
+        if(strcmp(ptr->phone,targetPhoneNumber) == 0)
+            return (PtrToEmployee) ptr; 
+    } 
+    return NULL; 
+}
